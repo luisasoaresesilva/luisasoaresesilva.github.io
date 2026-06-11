@@ -13,7 +13,7 @@
    xmp:Rating="1"
    darktable:import_timestamp="63916791423543432"
    darktable:change_timestamp="-1"
-   darktable:export_timestamp="-1"
+   darktable:export_timestamp="63916791536331410"
    darktable:print_timestamp="-1"
    darktable:xmp_version="5"
    darktable:raw_params="0"
@@ -76,12 +76,14 @@
    <dc:subject>
     <rdf:Bag>
      <rdf:li>darktable</rdf:li>
+     <rdf:li>exported</rdf:li>
      <rdf:li>format</rdf:li>
      <rdf:li>jpg</rdf:li>
     </rdf:Bag>
    </dc:subject>
    <lr:hierarchicalSubject>
     <rdf:Bag>
+     <rdf:li>darktable|exported</rdf:li>
      <rdf:li>darktable|format|jpg</rdf:li>
     </rdf:Bag>
    </lr:hierarchicalSubject>
