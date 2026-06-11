@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <title>Viagens – Luísa Soares e Silva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body { margin: 0; background: #000; }
+        .slideshow-container { position: relative; height: 100vh; overflow: hidden; }
+        .slide { display: none; height: 100vh; }
+        .slide img { width: 100%; height: 100vh; object-fit: contain; background: black; }
+        .prev, .next {
+            cursor: pointer; position: absolute; top: 50%; padding: 20px;
+            color: white; font-size: 40px; user-select: none; transform: translateY(-50%);
+        }
+        .prev { left: 20px; }
+        .next { right: 20px; }
+        .prev:hover, .next:hover { color: #ccc; }
+        .back {
+            position: fixed; top: 20px; left: 20px; color: white;
+            font-size: 20px; text-decoration: none;
+            background: rgba(0,0,0,0.4); padding: 10px 15px; border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+<a class="back" href="../index.html">← Voltar</a>
+
+<div class="slideshow-container">
+    <div class="slide"><img src="../images/viagens/20251021-85.jpg" alt="Viagens 4"></div>
+    <div class="slide"><img src="../images/viagens/20251021-1.jpg" alt="Viagens 1"></div>
+    <div class="slide"><img src="../images/viagens/20251021-25.jpg" alt="Viagens 2"></div>
+    <div class="slide"><img src="../images/viagens/20251021-26.jpg" alt="Viagens 3"></div>
+    <div class="slide"><img src="../images/viagens/20251021-33.jpg" alt="Viagens 4"></div>
+    <div class="slide"><img src="../images/viagens/20251021-39.jpg" alt="Viagens 4"></div>
+    <div class="slide"><img src="../images/viagens/20251021-68.jpg" alt="Viagens 4"></div>
+    <div class="slide"><img src="../images/viagens/20251021-69.jpg" alt="Viagens 4"></div>
+    <div class="slide"><img src="../images/viagens/20251021-70.jpg" alt="Viagens 4"></div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("slide");
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
+    for (let s of slides) s.style.display = "none";
+    slides[slideIndex - 1].style.display = "block";
+}
+
+document.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") plusSlides(1);
+    if (e.key === "ArrowLeft") plusSlides(-1);
+});
+</script>
+
+</body>
+</html>
+
