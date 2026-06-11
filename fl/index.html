@@ -19,65 +19,85 @@
 
     <!-- CUSTOM CSS -->
     <style>
-        body {
-            font-family: 'Roboto Mono', monospace;
-            background: #ffffff;
-            color: #000;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+        font-family: 'Roboto Mono', monospace;
+        background: #ffffff;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
 
-        #name h1 a {
-            text-decoration: none;
-            color: black;
-            font-weight: 400;
-        }
+    #name h1 a {
+        text-decoration: none;
+        color: black;
+        font-weight: 400;
+    }
 
-        .centertext {
-            text-align: center;
-        }
+    .centertext {
+        text-align: center;
+    }
 
-        #stage {
-            margin-top: 40px;
-        }
+    #stage {
+        margin-top: 40px;
+    }
 
-        .workselection {
-            margin: 0 auto;
-            max-width: 900px;
-        }
+    .workselection {
+        margin: 0 auto;
+        max-width: 900px;
+    }
 
-        ul.workselect {
-            list-style: none;
-            padding: 0;
-        }
+    ul.workselect {
+        list-style: none;
+        padding: 0;
+    }
 
-        ul.workselect li {
-            margin-bottom: 25px;
-        }
+    ul.workselect li {
+        margin-bottom: 25px;
+        position: relative; /* necessário para posicionar a imagem */
+    }
 
-        .worklink a {
-            font-size: 1.3rem;
-            text-decoration: none;
-            color: black;
-        }
+    .worklink a {
+        font-size: 1.3rem;
+        text-decoration: none;
+        color: black;
+    }
 
-        .workselectpic {
-            width: 100%;
-            max-width: 500px;
-            margin-top: 10px;
-        }
+    /* --- IMAGENS ESCONDIDAS E ANIMADAS --- */
 
-        #bottom {
-            margin-top: 60px;
-            padding: 40px 0;
-            background: #f5f5f5;
-        }
+    .workselectpic {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: all 0.5s ease;
+        width: 250px;     /* tamanho da miniatura */
+        height: auto;
+        pointer-events: none;
+    }
 
-        .zedwrapper h1 a {
-            text-decoration: none;
-            color: black;
-        }
-    </style>
+    /* Ímpares → escondidas à esquerda */
+    ul.workselect li:nth-child(odd) .workselectpic {
+        left: -270px;
+    }
+
+    /* Pares → escondidas à direita */
+    ul.workselect li:nth-child(even) .workselectpic {
+        right: -270px;
+    }
+
+    /* Hover: aparecem e deslizam */
+
+    ul.workselect li:nth-child(odd):hover .workselectpic {
+        left: 0;
+        opacity: 1;
+    }
+
+    ul.workselect li:nth-child(even):hover .workselectpic {
+        right: 0;
+        opacity: 1;
+    }
+</style>
+
 </head>
 
 <body class="front home">
